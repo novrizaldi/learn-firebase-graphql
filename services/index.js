@@ -4,11 +4,14 @@ const getUsers = () => {
   const userReference = firebase.database().ref("/Users/");
   return (new Promise((resolve, reject)=>{
     userReference.on("value", function(snapshot) {
+
+      console.log('ini di services',  snapshot.val());
+      
       const folders = snapshot.val();
       if (folders === null) {
         resolve([]);
       }else{
-        const data = Object.keys(folders).map(o => Object.assign({ id: o }, folders[o]));
+        const data = Object.keys(folders).map(o => Object.assign({ Id: o }, folders[o]));
         resolve(data);
       }
       userReference.off("value");

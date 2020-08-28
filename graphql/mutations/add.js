@@ -7,13 +7,13 @@ var services = require('../../services');
 exports.add = {
     type : Usertype.userType,
     args : {
-        id : {
+        Id : {
             type : new GraphQLNonNull(GraphQLID),
         },
-        name : {
+        Name : {
             type : new GraphQLNonNull(GraphQLString),
         },
-        phone : {
+        Phone : {
             type : new GraphQLNonNull(GraphQLString)
         }
     }, 

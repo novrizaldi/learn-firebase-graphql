@@ -10,13 +10,13 @@ exports.userType = new GraphQLObjectType ({
     name : 'user',
     fields : function(){
         return {
-            id : {
+            Id : {
                 type : new GraphQLNonNull(GraphQLID)
             },
-            name : {
+            Name : {
                 type : GraphQLString
             }, 
-            phone : {
+            Phone : {
                 type :GraphQLString
             }
         }
