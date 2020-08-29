@@ -6,7 +6,7 @@ router.get('/', function (req, res) {
   const userReference = firebase.database().ref("/Users/");
 
   userReference.on("value", function (snapshot) {
-    console.log('ini', snapshot.val());
+    console.log('ini di router', snapshot.val());
     res.json(snapshot.val());
     userReference.off("value");
   }, function (errorObject){
@@ -20,7 +20,7 @@ router.post('/', function (req, res) {
   const name = req.body.name;
   const phone = req.body.phone;
 
-  const referencePath = '/Users' + id + '/';
+  const referencePath = '/Users/' + id + '/';
   const userReference = firebase.database().ref(referencePath);
   userReference.set({
     Name : name, 
@@ -33,5 +33,20 @@ router.post('/', function (req, res) {
   }
   })
 });
+
+router.put('/:id', function (req, res) {
+  const { name, phone } = req.body
+  const id = req.params.id
+  
+  const referencePath = '/Users/'+id+'/';
+  const userReference = firebase.database().ref(referencePath);
+  userReference.update({Name : name, Phone: phone}, function(error) {
+    if (error) {
+      res.send("data couldn't be updated." + error)
+    } else { 
+      res.send("data updated successfully.");
+    }
+  })
+})
 
 module.exports = router;
