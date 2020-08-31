@@ -70,4 +70,4 @@ const updateUser = (user) => {
     }));
   }
 
-module.exports = {getUsers, createUser}
+module.exports = {getUsers, createUser, updateUser, deleteUser}
