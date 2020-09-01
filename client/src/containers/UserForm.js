@@ -37,30 +37,28 @@ class UserForm extends Component {
 
     render(){
         return(
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="form-inline judull" >
             <div className="form-group row">
-              <label htmlFor="userName" className="col-sm-2 col-form-label">Id</label>
-              <div className="col-sm-10">
-                <input type="text" className="form-control" id="Id" name="Id" value={this.state.Id} onChange={this.handleIdChange} placeholder="Id" />
+              <label htmlFor="userName" className=" col-form-label">Id</label>
+              <div className="col">
+                <input type="text" className="form-control " id="Id" name="Id" value={this.state.Id} onChange={this.handleIdChange} placeholder="Id" />
               </div>
-            </div>
-            <div className="form-group row">
-              <label htmlFor="Name" className="col-sm-2 col-form-label">Name</label>
-              <div className="col-sm-10">
+
+              <label htmlFor="Name" className=" col-form-label">Name</label>
+              <div className="col">
                 <input type="text" className="form-control" id="Name" name="Name" value={this.state.Name} onChange={this.handleNameChange} placeholder="name"/>
               </div>
-            </div>
-            <div className="form-group row">
-              <label htmlFor="Age" className="col-sm-2 col-form-label">Phone</label>
-              <div className="col-sm-10">
+
+              <label htmlFor="Age" className=" col-form-label">Phone</label>
+              <div className="col">
                 <input type="text" className="form-control" id="Phone" name="Phone" value={this.state.Phone} onChange={this.handlePhoneChange} placeholder="Phone"/>
               </div>
-            </div>
-            <div className="form-group row">
-              <div className="col-sm-10">
+     
+       
+              <div className="">
                 <button type="submit" className="btn btn-primary">Tambah</button>
               </div>
-            </div>
+              </div>
           </form>
         )
     }

@@ -31,7 +31,7 @@ export const loadUser = () => {
         query: usersQuery,
       })
       .then(function (response) {
-        console.log(response);
+        console.log('ini response di actions', response);
         dispatch(loadUserSuccess(response.data.users))
       })
       .catch(function (error) {

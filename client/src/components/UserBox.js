@@ -7,14 +7,14 @@ export default class UserBox extends Component {
       return(
         <div className="container">
           <div className="card">
-            <div className="card-header text-center">
+            <div className="card-header text-center judul">
             PHONEBOOK
             </div>
             <div className="card-body">
               <UserList />
               <UserForm />
             </div>
-            <div className="card-footer text-center">
+            <div className="card-footer text-center judul">
             novrizaldi@2020
             </div>
           </div>
